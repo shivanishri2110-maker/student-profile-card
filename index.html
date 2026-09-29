@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ff">
+  <title>Student Profile Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="page-heading">
+      <span class="eyebrow">YOUR DIGITAL INTRODUCTION</span>
+      <h1>Student profile</h1>
+      <p>A little card for the things you’re learning and building.</p>
+    </header>
+
+    <section class="profile-card" aria-label="Student profile card">
+      <div class="card-topline"><span class="status-dot"></span> OPEN TO LEARNING</div>
+      <div class="profile-main">
+        <div class="avatar-wrap">
+          <img id="profile-photo" class="avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=320&amp;h=320&amp;q=85" alt="Student profile">
+          <label class="photo-edit" for="photo-input" title="Choose a profile photo" aria-label="Choose a profile photo">＋</label>
+          <input id="photo-input" type="file" accept="image/*" hidden>
+        </div>
+        <div class="identity">
+          <span class="identity-label">HELLO, I’M</span>
+          <h2 id="student-name">Your Name</h2>
+          <p id="student-department" class="department">Computer Science</p>
+          <span id="student-year" class="year-pill">YEAR 1</span>
+        </div>
+      </div>
+
+      <div class="card-divider"></div>
+
+      <section class="skills-section">
+        <div class="section-title"><h3>Things I’m learning</h3><span>✳</span></div>
+        <div id="skills-list" class="skills-list"></div>
+      </section>
+
+      <footer class="card-footer">
+        <div><span class="identity-label">LET’S CONNECT</span><div class="social-links" id="social-links"></div></div>
+        <span class="footer-mark">STUDENT CARD <b>✳</b></span>
+      </footer>
+
+      <button class="edit-button" id="edit-button" type="button"><span>✎</span> Edit profile</button>
+    </section>
+
+    <p class="page-note">Your profile is saved in this browser on this device.</p>
+  </main>
+
+  <dialog id="edit-dialog" class="edit-dialog">
+    <form id="profile-form" method="dialog">
+      <div class="dialog-heading"><div><span class="eyebrow">MAKE IT YOURS</span><h2>Edit profile</h2></div><button class="close-button" type="button" id="close-dialog" aria-label="Close">×</button></div>
+      <label>Full name<input id="input-name" name="name" required maxlength="60" placeholder="e.g. Asha Kumar"></label>
+      <div class="form-row">
+        <label>Department<input id="input-department" name="department" required maxlength="60" placeholder="e.g. Computer Science"></label>
+        <label>Year<select id="input-year" name="year"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+      </div>
+      <label>Skills <span class="label-hint">Separate with commas</span><input id="input-skills" name="skills" maxlength="160" placeholder="Python, UI design, teamwork"></label>
+      <label>LinkedIn profile URL<input id="input-linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/your-profile"></label>
+      <label>GitHub profile URL<input id="input-github" name="github" type="url" placeholder="https://github.com/your-username"></label>
+      <div class="dialog-actions"><button class="cancel-button" type="button" id="cancel-button">Cancel</button><button class="save-button" type="submit">Save profile <span>↗</span></button></div>
+    </form>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
